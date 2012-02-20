@@ -1,0 +1,10 @@
+Cookbook for deploying an encryption secret to a box at the beginning of deployment.
+In the case where you are using chef-server, you would use a template, and, normally,
+with chef-solo, you would just write the file.  This was specifically designed to work 
+with vagrant + chef-solo provisioner on a stock box.
+
+To use this, just set:
+
+"encrypted_data_bag_secret": "<put secret here>"
+
+in your node.json and add "recipe[encrypted_data_bag_secret]" to your run_list.
